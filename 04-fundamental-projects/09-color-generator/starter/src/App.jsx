@@ -9,7 +9,7 @@ const App = () => {
   return (
     <main>
       <Form></Form>
-      <ColorList></ColorList>
+      <ColorList colors={colors} />
     </main>
   );
 };
