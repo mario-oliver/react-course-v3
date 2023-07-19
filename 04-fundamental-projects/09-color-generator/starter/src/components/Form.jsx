@@ -51,29 +51,24 @@ const Form = () => {
           className="btn"
           type="submit"
           style={{ backgroundColor: color }}
+          //   onClick={(e) => setColor(e.target.value)}
         >
           Set Color
         </button>
+        <h4 style={{ alignContent: 'center', margin: '.5rem' }}>
+          complementary color
+        </h4>
+
+        <input type="color" value={compColor} />
+        <input type="text" value={compColor} />
       </form>
-      <h4>complementary color</h4>
-      <form className="color-form" onSubmit={handleSubmit}>
-        <input
-          type="color"
-          value={color}
-          onChange={(e) => setColor(e.target.value)}
-        />
-        <input
-          type="text"
-          value={color}
-          onChange={(e) => setColor(e.target.value)}
-        />
-      </form>
-      <br></br>
       <button
         className="btn"
         onClick={() => {
           setColor(generateHex);
+          setCompColor(generateComplementaryHex(color));
         }}
+        style={{ marginLeft: '1rem' }}
       >
         Random Color
       </button>
